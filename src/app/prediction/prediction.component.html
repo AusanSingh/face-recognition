@@ -1,0 +1,46 @@
+<div class="container height-100">
+  <div class="row align-items-center height-100">
+    <div class="col-md-6 col-sm-12"></div>
+      <div class="col-md-6 col-sm-12">
+          <h4 class="text-center" style="
+              color: #fff;
+          ">Face prediction</h4>
+          <div class="form_wrap">
+      
+              <form action="" [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+                  <div class="row justify-content-center">
+                      <div class="col-8">
+                          <div class="form-group">
+                              <input type="text" class="form-control" id="name" placeholder="Subject Name" required 
+                              formControlName = "subject_name">
+                              <div class="alert alert-danger" *ngIf="!rForm.controls['subject_name'].valid && rForm.controls['subject_name'].touched">
+                                  This field is required.
+                                </div>
+                          </div>
+                      </div>
+                      <div class="col-4">
+                          <button type="submit" class="btn btn-primary btn-block" 
+                          [disabled]="!rForm.valid">Take Photo</button>
+                      </div>
+                  </div>
+              </form>
+
+              <hr>
+      
+              <div class="text-center">Prediction</div>
+              <br>
+              <form action="" [formGroup]="predictForm" (ngSubmit)="predictPost(predictForm.value)">
+                <input type="file" name="file" class="form-control file_upload" required 
+                formControlName = "file" accept="image/*" (change)="onImageChangeFromFile($event)" #selectedFile> 
+                <div class="img_box"> <img *ngIf="submit_file" [src]="submit_file"  alt="" /> </div>
+                <div id="msg_predict" *ngIf="responseName">
+                  <div class="alert alert-info">{{responseName}}</div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" >Predict</button>
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>

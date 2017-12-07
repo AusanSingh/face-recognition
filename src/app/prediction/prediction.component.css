@@ -1,0 +1,23 @@
+body {
+    background: #f8f8f8;
+}
+        .form_wrap {
+            width: 100%;
+            padding: 0;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            padding: 30px 30px 30px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 3px rgba(0,0,0,.1);
+        }
+        .img_box {
+            margin: 10px 0;
+            text-align: center;
+            }
+.img_box img {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    max-height: 120px;
+    max-width: 100%;
+}
